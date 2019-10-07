@@ -7,7 +7,7 @@ class Users:
 
 account_details = [] #This is where we will store all the accounts and their details
 
-    def __init__(self,account_name,username,email,password): #the intance variables that will represent the users details for different accounts
+def __init__(self,account_name,username,email,password): #the intance variables that will represent the users details for different accounts
 
          
             self.account_name = account_name
