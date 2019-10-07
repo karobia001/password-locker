@@ -17,3 +17,6 @@ class User:
     
     def save_user(self):
         User.user_details.append(self)
+    
+    def tearDown(self):
+        User.user_details = []
