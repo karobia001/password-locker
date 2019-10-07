@@ -1,30 +1,45 @@
-import unittest # import unittest module
-from user import  Users # import the users class from User modul
+
+import unittest
+from user import User
 
 
 class TestUser(unittest.TestCase):
-
-    '''
-    Test class that defines test cases for the users class behaviours.
-    Args:
-        unittest.TestCase: TestCase class that helps in creating test cases
-    '''
-
     def setUp(self):
-        '''
-        Set up method to run before each test cases.
-        '''
-        self.new_user  = Users ("facebook","maich","karobia001","maich") # create contact object
+        self.new_user = User("facebook","karobia", "maina", "0724550408","karobiamaina81@gmail.com", "maich", "maich001") # create user object
+
     def test_init(self):
+        self.assertEqual(self.new_user.account, "facebook")
+        self.assertEqual(self.new_user.first_name, "karobia")
+        self.assertEqual(self.new_user.last_name, "maina")
+        self.assertEqual(self.new_user.phone_number, "0724550408")
+        self.assertEqual(self.new_user.email_address, "karobiamaina81@gmail.com")
+        self.assertEqual(self.new_user.username, "maich")
+        self.assertEqual(self.new_user.password, "maich001")
+        
+    def test_save_user(self):
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_details), 1)
+    
+    
+    def test_save_multiple_user(self):
+        self.new_user.save_user()
+        test_user = User("facebook","karobia", "maina", "0724550408","karobiamaina81@gamil.com", "maich", "maich001")
+        test_user.save_user()
+        self.assertEqual(len(User.user_details), 2)
+    
+    def tearDown(self):
+        User.user_details = []
+        
+    def delete_user(self):
+
         '''
-        test_init test case to test if the object is initialized properly
+        delete_user method deletes a saved user from the user_details
         '''
 
-        self.assertEqual(self.new_user.account_name,"facebook")
-        self.assertEqual(self.new_user.username,"maich")
-        self.assertEqual(self.new_user.email,"karobiamaina81@gmaol.com")
-        self.assertEqual(self.new_user.password,"maich") 
-    
-    if __name__ == '__main__':
-       unittest.main()
+        User.user_details.remove(self)
+
+
+if __name__ == '__main__':
+    unittest.main()
+
         
