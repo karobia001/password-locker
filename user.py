@@ -1,4 +1,4 @@
-
+import pyperclip
 
 class User:
     
@@ -20,3 +20,14 @@ class User:
     
     def tearDown(self):
         User.user_details = []
+        
+    @classmethod
+    def user_exists(cls, pass_word):
+        for user in cls.user_details:
+            if user.password == pass_word:
+                return True
+        return False
+    @classmethod
+    def display_credentials(cls):
+
+        return cls.user_details
