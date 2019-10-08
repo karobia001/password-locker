@@ -78,4 +78,9 @@ def main():
                     print("\n Password.....")
                     print("+" * 100)
                     pass_word = input()
-                   
+                    print(
+                        "Use these short codes : cc - create a new account, dc - display existing accounts, fc -find an account, del -delete your credentials ")
+
+                    short_code = input().lower()
+
+                    
