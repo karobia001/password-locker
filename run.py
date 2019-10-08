@@ -121,4 +121,58 @@ def main():
                             print("Account ...")
                             acc = input()
 
-                            
+                            # create and save new contact.
+                            save_credentials(create_credentials(
+                                f_name, l_name, p_number, e_address, u_name, pass_word, acc))
+                            print('\n')
+                            print(f"New Contact {f_name} {l_name} created")
+                            print('\n')
+
+                    elif short_code == 'dc':
+
+                            if display_credentials():
+                                    print(
+                                        "Here is a list of all your crededentials")
+                                    print('\n')
+
+                                    for credentials in display_credentials():
+                                            print(
+                                                f"{credentials.account} {credentials.first_name} .....{credentials.phone_number}")
+
+                                    print('\n')
+                            else:
+                                    print('\n')
+                                    print(
+                                        "You dont seem to have any credentials saved yet")
+                                    print('\n')
+
+                    elif short_code == 'fc':
+
+                            print("Enter the number you want to search for")
+
+                            search_number = input()
+                            if check_existing_credentials(search_number):
+                                    search_credentials = find_credentials(
+                                        search_number)
+                                    print(
+                                        f" username, account, password{search_credentials.first_name} {search_credentials.last_name}")
+                                    print('-' * 20)
+
+                                    print(
+                                        f"Phone number.......{search_credentials.phone_number}")
+                                    print(
+                                        f"Email address.......{search_credentials.email}")
+                            else:
+                                    print("That account does not exist")
+
+                    elif short_code == "del":
+                            print("Bye .......")
+                            break
+                    else:
+                            print(
+                                "I really didn't get that. Please use the short codes")
+
+
+if __name__ == '__main__':
+
+    main()
