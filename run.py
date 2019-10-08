@@ -13,3 +13,17 @@ def create_credentials(fname, lname, phone, email, username, account, password):
     return new_credentials
 
 
+def save_credentials(credentials):
+    '''
+    Function to save contact
+    '''
+    credentials.save_credentials()
+
+
+def del_credentials(credentials):
+    '''
+    Function to delete credentilas
+    '''
+    credentials.delete_credentials()
+
+
