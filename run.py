@@ -53,3 +53,29 @@ def display_credentials():
     Function that returns all the saved contacts
     '''
     return Credentials.display_credentials()
+
+
+def main():
+
+ while True:
+
+                    print(
+                        "Hello Welcome to your PasswordLocker app.Explore your accounts and feel free to add another. What is your name?")
+                    print("What is your name\n")
+                    user_name = input()
+
+                    print(f"Habari yako {user_name}. what would you like to do?")
+                    print('\n')
+
+                    print("\n Login")
+                    print("="*100)
+
+                   
+
+                    print("=" * 100)
+                    u_name = input()
+
+                    print("\n Password.....")
+                    print("+" * 100)
+                    pass_word = input()
+                   
