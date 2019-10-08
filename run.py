@@ -83,4 +83,33 @@ def main():
 
                     short_code = input().lower()
 
-                    
+                    if short_code == 'cc':
+
+                            print("New Account")
+                            print("-"*10)
+
+                            print("First name ....")
+                            f_name = input()
+
+                            print("Last name ...")
+                            l_name = input()
+
+                            print("Phone number ...")
+                            p_number = input()
+
+                            print("Email address ...")
+                            e_address = input()
+
+                            print("Username ...")
+                            u_name = input()
+
+                            print(
+                                "\nFor a password use  pass : to create a password OR  word : to  use computer generated password\n")
+                            print(' - ' * 100)
+                            pass_word = input()
+
+                            if pass_word == 'pass':
+                             print("\nEnter Password")
+                            pass_word = input()
+
+                   
