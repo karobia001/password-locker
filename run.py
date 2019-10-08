@@ -27,3 +27,29 @@ def del_credentials(credentials):
     credentials.delete_credentials()
 
 
+def find_credentials(acc):
+    '''
+    Function that finds a contact by number and returns the contact
+    '''
+    return Credentials.find_credentials_by_acc(acc)
+
+
+def check_existing_user(pass_word):
+    '''
+    Function that check if a contact exists with that number and return a Boolean
+    '''
+    return User.user_exists(pass_word)
+
+
+def check_existing_credentials(acc):
+    '''
+    Function that check if a contact exists with that number and return a Boolean
+    '''
+    return Credentials.credentials_exists(acc)
+
+
+def display_credentials():
+    '''
+    Function that returns all the saved contacts
+    '''
+    return Credentials.display_credentials()
