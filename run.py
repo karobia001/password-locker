@@ -112,4 +112,13 @@ def main():
                              print("\nEnter Password")
                             pass_word = input()
 
-                   
+                    elif pass_word == 'word':
+                            characters = "abcde01234fghILKLM56789NopqrstuvWxyz"
+                            p_word = "".join(random.choice(characters)
+                                             for _ in range(8))
+                            print( f"The computer generated password is: {p_word}\n")
+
+                            print("Account ...")
+                            acc = input()
+
+                            
