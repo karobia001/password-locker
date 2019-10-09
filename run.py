@@ -6,7 +6,7 @@ import random
 
 def create_credentials(fname, lname, phone, email, username, account, password):
     '''
-    Function to create a new contact
+    Function to create a new credentials
     '''
     new_credentials = Credentials(
         fname, lname, phone, email, username, account, password)
@@ -15,7 +15,7 @@ def create_credentials(fname, lname, phone, email, username, account, password):
 
 def save_credentials(credentials):
     '''
-    Function to save contact
+    Function to save credentials
     '''
     credentials.save_credentials()
 
